@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:foreground="?android:attr/selectableItemBackground"
+              android:minHeight="@dimen/min_height_row"
+              android:orientation="horizontal"
+              android:paddingEnd="@dimen/activity_horizontal_margin"
+              android:paddingStart="@dimen/activity_horizontal_margin">
+
+    <ImageView
+        android:contentDescription="@string/content_description_feed_icon"
+        android:id="@+id/menu_icon_feed"
+        tools:src="@drawable/ic_bookmark_border_white_24dp"
+        style="@style/ImageViewMenu"/>
+
+    <TextView
+        android:id="@+id/menu_label"
+        tools:text="Feed"
+        style="@style/TextViewMenu"/>
+
+</LinearLayout>

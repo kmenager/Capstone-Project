@@ -1,0 +1,51 @@
+{
+  "project_info": {
+    "project_number": "1015159039244",
+    "project_id": "get-me-some-feed"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015159039244:android:260af0f9142d1c67",
+        "android_client_info": {
+          "package_name": "io.github.kmenager.getmesomefeed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1015159039244-42r54dr507ie6gasmrtuocp1c66m3nke.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.github.kmenager.getmesomefeed",
+            "certificate_hash": "8C9B7CC5A16E1E1135B790866569BF1CFF7D5D52"
+          }
+        },
+        {
+          "client_id": "1015159039244-tnhgvqdv3mnkohut8em0erisdbmavbd0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwgp0pjQJcgDYZZnCZvO69UqfVd5firM0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-76861327-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

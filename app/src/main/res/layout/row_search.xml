@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:minHeight="@dimen/search_row_min_height">
+
+    <ImageView
+        android:id="@+id/icon_feed"
+        android:layout_width="@dimen/search_row_size_icon_feed"
+        android:layout_height="@dimen/search_row_size_icon_feed"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/search_row_margin_start"
+        android:layout_marginStart="@dimen/search_row_margin_start"
+        android:contentDescription="@string/content_description_feed_icon"
+        android:padding="8dp"
+        tools:src="@drawable/ic_menu_camera"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/icon_feed"
+        android:layout_toLeftOf="@+id/icon_save_favorite"
+        android:layout_toRightOf="@+id/icon_feed"
+        android:layout_toStartOf="@+id/icon_save_favorite"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/search_row_padding_height_text"
+        android:paddingEnd="@dimen/search_row_padding_end_text"
+        android:paddingLeft="@dimen/search_row_padding_start_text"
+        android:paddingRight="@dimen/search_row_padding_end_text"
+        android:paddingStart="@dimen/search_row_padding_start_text"
+        android:paddingTop="@dimen/search_row_padding_height_text">
+
+        <TextView
+            android:id="@+id/title_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif"
+            android:maxLines="2"
+            android:textColor="@color/search_title"
+            android:textSize="@dimen/search_row_text_size_title"
+            tools:text="The verge"/>
+
+        <TextView
+            android:id="@+id/readers_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif"
+            android:maxLines="1"
+            android:textColor="@color/search_subtitle"
+            android:textSize="@dimen/search_row_text_size_subtitle"
+            tools:text="4K readers"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/icon_save_favorite"
+        android:layout_width="@dimen/search_row_size_icon_fav_feed"
+        android:layout_height="@dimen/search_row_size_icon_fav_feed"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/search_row_fav_feed_margin_end"
+        android:layout_marginRight="@dimen/search_row_fav_feed_margin_end"
+        android:padding="@dimen/search_row_padding_fav_feed"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:src="@drawable/ic_favorite_border_black_24dp"/>
+
+</RelativeLayout>

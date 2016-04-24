@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#388E3C</color>
+    <color name="colorAccent">#FF5722</color>
+
+    <color name="background_cover_protection">#4C000000</color>
+    <color name="menu_text">#DD000000</color>
+    <color name="menu_icon">#8A000000</color>
+    <color name="divider">#B6B6B6</color>
+
+    <color name="search_title">#DE000000</color>
+    <color name="search_subtitle">#8A000000</color>
+</resources>

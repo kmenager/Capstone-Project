@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="io.github.kmenager.getmesomefeed"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:name=".FeedApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".ui.main.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="io.github.kmenager.getmesomefeed.provider.FeedProvider"
+            android:authorities="io.github.kmenager.getmesomefeed.FeedProvider"
+            android:exported="false"/>
+
+        <activity android:name=".ui.detail.DetailActivity">
+        </activity>
+        <activity android:name=".ui.search.SearchActivity">
+        </activity>
+    </application>
+
+</manifest>

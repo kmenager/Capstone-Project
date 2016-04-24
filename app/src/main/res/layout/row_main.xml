@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:layout_marginBottom="@dimen/main_row_margin_height"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:layout_marginRight="@dimen/activity_horizontal_margin"
+    android:layout_marginTop="@dimen/main_row_margin_height">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image_view_row_main"
+            android:layout_width="@dimen/main_row_size_image"
+            android:layout_height="@dimen/main_row_size_image"
+            android:contentDescription="@string/content_description_feed_cover_image"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background_cover_protection"/>
+
+        <TextView
+            android:id="@+id/title_row_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/image_view_row_main"
+            android:layout_toRightOf="@+id/image_view_row_main"
+            android:layout_centerVertical="true"
+            android:textColor="@color/menu_text"
+            android:fontFamily="sans-serif"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/main_row_padding_width_textview"
+            android:paddingRight="@dimen/main_row_padding_width_textview"
+            android:maxLines="3"
+            tools:text="blablablablablablablablablablablablablablablablablabla"/>
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

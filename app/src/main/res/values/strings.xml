@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Get me some feed</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="connected_start_search">Start by searching your favorite website or browse your saved feed from the menu</string>
+    <string name="not_connected_start_search">Start by searching for your favorite site</string>
+    <string name="saved_feed_title">Bookmarks</string>
+    <string name="logout">Logout</string>
+    <string name="content_description_feed_icon">Feed icon</string>
+    <string name="content_description_bookmarks_icon">Bookmarks icon</string>
+    <string name="content_description_logout_icon">Logout icon</string>
+    <string name="content_description_feed_cover_image">Feed cover image</string>
+    <string name="open_website">Open website</string>
+    <string name="log_save_item">Log in to save your feed</string>
+    <string name="bookmarked">Bookmarked</string>
+</resources>
