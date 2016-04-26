@@ -63,6 +63,7 @@
     </LinearLayout>
 
     <ImageView
+        android:contentDescription="@string/content_description_icon_save_feed"
         android:id="@+id/icon_save_favorite"
         android:layout_width="@dimen/search_row_size_icon_fav_feed"
         android:layout_height="@dimen/search_row_size_icon_fav_feed"

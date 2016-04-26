@@ -1,0 +1,53 @@
+<RelativeLayout
+    android:id="@+id/widget"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/widget_background"
+        android:layout_width="@dimen/main_row_size_image"
+        android:layout_height="@dimen/main_row_size_image"
+        android:contentDescription="@string/content_description_feed_cover_image"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_cover_protection"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/widget_background"
+        android:layout_toRightOf="@+id/widget_background"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/widget_title_feed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:paddingLeft="@dimen/main_row_padding_width_textview"
+            android:paddingRight="@dimen/main_row_padding_width_textview"
+            android:textColor="@color/menu_text"
+            tools:text="blablablablablablablablablablablablablablablablablabla"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/widget_title_stream_padding_top"
+            android:id="@+id/widget_title_stream"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:textSize="@dimen/widget_title_stream_text_size"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/main_row_padding_width_textview"
+            android:paddingRight="@dimen/main_row_padding_width_textview"
+            android:textColor="@color/search_subtitle"
+            tools:text="blablablablablablablablablablablablablablablablablabla"/>
+    </LinearLayout>
+</RelativeLayout>

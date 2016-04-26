@@ -128,14 +128,16 @@ public class MainActivity extends BaseActivity implements MainView, MainAdapter.
             mPlaceHolderIconUrl = savedInstanceState.getString(Constants.ARG_EXTRA_PLACEHOLDER);
             getSupportActionBar().setTitle(savedInstanceState.getString(Constants.ARG_EXTRA_TITLE));
         }
-//        mPresenter.fetchStream("feed/http://feeds.feedburner.com/fubiz");
+        if (mPresenter.isLoggedUser())
+            mPresenter.loadUserStream();
 
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         outState.putParcelableArrayList(Constants.ARG_EXTRA_ITEMS, mItemViewList);
-        outState.putString(Constants.ARG_EXTRA_TITLE, getSupportActionBar().getTitle().toString());
+        outState.putString(Constants.ARG_EXTRA_TITLE, getSupportActionBar().getTitle() != null ?
+                getSupportActionBar().getTitle().toString() : "");
         outState.putString(Constants.ARG_EXTRA_PLACEHOLDER, mPlaceHolderIconUrl);
         super.onSaveInstanceState(outState);
     }
@@ -184,6 +186,10 @@ public class MainActivity extends BaseActivity implements MainView, MainAdapter.
             menuHeader.urlProfile = acct.getPhotoUrl();
             if (menuFragment != null) {
                 menuFragment.setSignIn(menuHeader);
+                menuFragment.refreshMenu();
+                if (mMainAdapter.getItemCount() == 0) {
+                    mPresenter.loadUserStream();
+                }
             }
         } else {
 

@@ -11,6 +11,7 @@ import java.util.Locale;
 import java.util.Map;
 
 import io.github.kmenager.getmesomefeed.data.local.model.FavoriteSubscription;
+import io.github.kmenager.getmesomefeed.data.local.model.Profile;
 import io.github.kmenager.getmesomefeed.data.local.model.QueryFeed;
 import io.github.kmenager.getmesomefeed.data.local.model.Stream;
 import io.github.kmenager.getmesomefeed.data.local.model.Subscription;
@@ -20,6 +21,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -56,6 +58,18 @@ public interface FeedService {
     Observable<retrofit2.Response<ResponseBody>>
     unSubscribeFeed(@Header(AUTHORIZATION) String auth,
                     @Body List<String> feedIds);
+
+    @GET("v3/profile")
+    Observable<Profile> getProfile(@Header(AUTHORIZATION) String auth);
+
+    @GET("v3/streams/contents")
+    Observable<Stream> getStream(@Header(AUTHORIZATION) String auth, @Query("streamId") String streamId);
+
+    @GET("v3/profile")
+    Call<Profile> getProfileWidget(@Header(AUTHORIZATION) String auth);
+
+    @GET("v3/streams/contents")
+    Call<Stream> getStreamWidget(@Header(AUTHORIZATION) String auth, @Query("streamId") String streamId);
 
     class Factory {
         public static FeedService makeFeedService() {

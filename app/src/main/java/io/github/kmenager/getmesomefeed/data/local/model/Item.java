@@ -34,6 +34,9 @@ public class Item implements Parcelable, ItemView {
     @SerializedName("visual")
     public Visual visual;
 
+    @SerializedName("origin")
+    public Origin origin;
+
     public Item() {
     }
 
@@ -45,6 +48,7 @@ public class Item implements Parcelable, ItemView {
         date = in.readLong();
         alternate = in.createTypedArrayList(Alternate.CREATOR);
         visual = in.readParcelable(Visual.class.getClassLoader());
+        origin = in.readParcelable(Origin.class.getClassLoader());
     }
 
     @Override
@@ -56,6 +60,7 @@ public class Item implements Parcelable, ItemView {
         dest.writeLong(date);
         dest.writeTypedList(alternate);
         dest.writeParcelable(visual, flags);
+        dest.writeParcelable(origin, flags);
     }
 
     @Override

@@ -25,4 +25,18 @@
     <dimen name="search_row_padding_start_text">6dp</dimen>
     <dimen name="search_row_padding_fav_feed">14dp</dimen>
     <dimen name="search_row_fav_feed_margin_end">4dp</dimen>
+    <dimen name="text_size_content_main">18sp</dimen>
+
+    <dimen name="widget_today_default_width">110dp</dimen>
+    <dimen name="widget_today_default_height">40dp</dimen>
+    <dimen name="widget_today_min_resize_width">40dp</dimen>
+    <dimen name="widget_today_min_resize_height">@dimen/widget_today_default_height</dimen>
+    <dimen name="widget_today_large_intermediate_width">220dp</dimen>
+    <dimen name="widget_today_large_width">330dp</dimen>
+    <dimen name="widget_detail_min_resize_width">220dp</dimen>
+    <dimen name="widget_detail_default_height">180dp</dimen>
+    <dimen name="widget_detail_default_width">250dp</dimen>
+    <dimen name="widget_detail_min_resize_height">180dp</dimen>
+    <dimen name="widget_title_stream_text_size">12sp</dimen>
+    <dimen name="widget_title_stream_padding_top">4dp</dimen>
 </resources>

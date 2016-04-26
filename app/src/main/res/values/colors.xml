@@ -11,4 +11,7 @@
 
     <color name="search_title">#DE000000</color>
     <color name="search_subtitle">#8A000000</color>
+
+    <color name="background_start_color">#0000</color>
+    <color name="background_end_color">#3000</color>
 </resources>

@@ -30,7 +30,7 @@
         android:layout_height="match_parent"
         android:padding="@dimen/activity_horizontal_margin"
         android:gravity="center"
-        android:textSize="18sp"
+        android:textSize="@dimen/text_size_content_main"
         android:textStyle="bold"
         android:textColor="@color/menu_text"
         android:lineSpacingExtra="6dp"

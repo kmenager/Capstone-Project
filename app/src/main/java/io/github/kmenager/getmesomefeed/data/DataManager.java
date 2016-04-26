@@ -1,23 +1,30 @@
 package io.github.kmenager.getmesomefeed.data;
 
+import android.content.Context;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+import io.github.kmenager.getmesomefeed.R;
 import io.github.kmenager.getmesomefeed.data.local.PreferencesHelper;
 import io.github.kmenager.getmesomefeed.data.local.database.DatabaseHelper;
 import io.github.kmenager.getmesomefeed.data.local.model.FavoriteSubscription;
 import io.github.kmenager.getmesomefeed.data.local.model.Item;
 import io.github.kmenager.getmesomefeed.data.local.model.ItemView;
+import io.github.kmenager.getmesomefeed.data.local.model.Profile;
 import io.github.kmenager.getmesomefeed.data.local.model.QueryFeed;
 import io.github.kmenager.getmesomefeed.data.local.model.Result;
 import io.github.kmenager.getmesomefeed.data.local.model.Stream;
 import io.github.kmenager.getmesomefeed.data.local.model.Subscription;
 import io.github.kmenager.getmesomefeed.data.local.model.database.ItemDatabase;
 import io.github.kmenager.getmesomefeed.data.remote.FeedService;
+import io.github.kmenager.getmesomefeed.injection.ApplicationContext;
 import okhttp3.ResponseBody;
+import retrofit2.Call;
 import retrofit2.Response;
 import rx.Observable;
 import rx.Subscriber;
@@ -26,12 +33,14 @@ import rx.functions.Func1;
 @Singleton
 public class DataManager {
 
+    private final Context mContext;
     private final FeedService mFeedService;
     private final DatabaseHelper mDatabaseHelper;
     private final PreferencesHelper mPreferencesHelper;
 
     @Inject
-    public DataManager(FeedService feedService, DatabaseHelper databaseHelper, PreferencesHelper preferencesHelper) {
+    public DataManager(@ApplicationContext Context context, FeedService feedService, DatabaseHelper databaseHelper, PreferencesHelper preferencesHelper) {
+        mContext = context;
         mFeedService = feedService;
         mDatabaseHelper = databaseHelper;
         mPreferencesHelper = preferencesHelper;
@@ -173,5 +182,32 @@ public class DataManager {
                 subscriber.onCompleted();
             }
         });
+    }
+
+    public Observable<Stream> getUserStream() {
+        final String auth = FeedService.Util.buildAuthorization();
+        return mFeedService.getProfile(auth)
+                .concatMap(new Func1<Profile, Observable<? extends Stream>>() {
+                    @Override
+                    public Observable<? extends Stream> call(Profile profile) {
+                        return mFeedService.getStream(auth, mContext.getString(R.string.user_stream_id, profile.id));
+                    }
+                });
+    }
+
+    public List<Item> fetchSynchronousFeed() throws IOException {
+        String auth = FeedService.Util.buildAuthorization();
+        Call<Profile> callProfile = mFeedService.getProfileWidget(auth);
+        Profile profile = callProfile.execute().body();
+        List<Item> items = new ArrayList<>();
+        if (profile != null) {
+
+            Call<Stream> callStream = mFeedService.getStreamWidget(auth, mContext.getString(R.string.user_stream_id, profile.id));
+            Stream stream = callStream.execute().body();
+            if (stream != null) {
+                items.addAll(stream.items);
+            }
+        }
+        return items;
     }
 }

@@ -101,4 +101,29 @@ public class MainPresenter extends BasePresenter<MainView> {
         checkViewAttached();
         return mDataManager.getPreferencesHelper().getIsConnected();
     }
+
+    public void loadUserStream() {
+        checkViewAttached();
+        if (NetworkUtil.isNetworkConnected(mContext)) {
+            mSubscription = mDataManager.getUserStream()
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeOn(Schedulers.io())
+                    .subscribe(new Subscriber<Stream>() {
+                        @Override
+                        public void onCompleted() {
+
+                        }
+
+                        @Override
+                        public void onError(Throwable e) {
+
+                        }
+
+                        @Override
+                        public void onNext(Stream stream) {
+                            getMvpView().showStream(stream);
+                        }
+                    });
+        }
+    }
 }

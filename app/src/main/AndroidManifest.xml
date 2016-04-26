@@ -28,6 +28,22 @@
         </activity>
         <activity android:name=".ui.search.SearchActivity">
         </activity>
+
+        <receiver
+            android:name=".widget.FeedWidgetProvider"
+            android:label="@string/title_widget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="io.github.kmenager.getmesomefeed.ACTION_DATA_UPDATED"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget"/>
+        </receiver>
+
+        <service android:name=".widget.FeedWidgetRemoteViewsService"
+                 android:exported="false"
+                 android:permission="android.permission.BIND_REMOTEVIEWS"/>
     </application>
 
 </manifest>

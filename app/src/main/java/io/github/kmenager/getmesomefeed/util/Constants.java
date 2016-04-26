@@ -12,4 +12,6 @@ public class Constants {
     public static final String ARG_EXTRA_TITLE = "title";
     public static final String ARG_EXTRA_RESULT = "result";
     public static final String ARG_EXTRA_PLACEHOLDER = "placeholder_url";
+
+    public static final String ACTION_DATA_UPDATED = "io.github.kmenager.getmesomefeed.ACTION_DATA_UPDATED";
 }
